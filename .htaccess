@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /travel_booking/
+
+# Error pages
+ErrorDocument 404 /travel_booking/404.php
+ErrorDocument 500 /travel_booking/500.php
+
+# Remove trailing slashes (preserves base path)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ $1 [L,R=301]
+
+# Block direct access to sensitive files and directories
+RewriteRule ^(\.env|\.git|config|app|vendor|database)/ - [F,L]
+RewriteRule ^(\.env) - [F,L]
+RewriteRule \.(sql|env|log)$ - [F,L]
+
+# Route missing non-file/non-directory requests to 404 page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ 404.php [L]
+

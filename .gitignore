@@ -1,0 +1,17 @@
+# Environment configuration
+.env
+
+# Dependencies
+vendor/
+
+# Uploaded media (keep folder structure and .htaccess, ignore user uploads)
+/uploads/*
+!/uploads/.htaccess
+!/uploads/.gitkeep
+
+# System & temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+scratch.php
