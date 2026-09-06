@@ -47,7 +47,7 @@ users, admins, packages, destinations, bookings, payments, reviews, wishlist, co
 ## Default Credentials
 
 **User:** john@example.com / password  
-**Admin:** admin / admin123  
+**Admin:**  /   
 (Admin panel: http://localhost/travel-booking/admin)
 
 ## Tech Stack
